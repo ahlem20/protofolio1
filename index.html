@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مهدي - مصمم واجهات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+    <script defer src="main.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+</head>
+<script>
+    const toggleThemeBtn = document.getElementById('toggle-theme');
+
+    toggleThemeBtn.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+
+        // Optional: Change button text
+        if (document.documentElement.classList.contains('dark')) {
+            toggleThemeBtn.textContent = '☀️ فاتح';
+        } else {
+            toggleThemeBtn.textContent = '🌙 داكن';
+        }
+    });
+</script>
+
+<body class="transition-all duration-500">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center p-4">
+            <a href="#" class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">شعارك</a>
+            <ul class="hidden md:flex space-x-reverse space-x-6 text-sm font-medium text-gray-700 dark:text-gray-200">
+                <li><a href="#home" class="hover:text-indigo-600 dark:hover:text-indigo-400">الرئيسية</a></li>
+                <li><a href="#about" class="hover:text-indigo-600 dark:hover:text-indigo-400">من أنا</a></li>
+                <li><a href="#skills" class="hover:text-indigo-600 dark:hover:text-indigo-400">المهارات</a></li>
+                <li><a href="#work" class="hover:text-indigo-600 dark:hover:text-indigo-400">الأعمال</a></li>
+                <li><a href="#contact" class="hover:text-indigo-600 dark:hover:text-indigo-400">اتصل بي</a></li>
+            </ul>
+            <div class="flex items-center gap-2">
+                <button id="toggle-theme"
+                    class="px-4 py-2 border rounded-lg text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                    🌙 داكن
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section id="home"
+        class="min-h-screen flex flex-col-reverse md:flex-row-reverse items-center justify-center px-6 md:px-20 gap-16 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div class="text-center md:text-right animate-fadein">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+                مرحبًا، أنا <span class="text-indigo-600 dark:text-indigo-400">مهدي</span><br /> مصمم واجهات الويب
+            </h1>
+            <a href="#contact"
+                class="mt-6 inline-block bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition">تواصل
+                معي</a>
+            <div class="flex justify-center md:justify-end gap-4 mt-6 text-xl text-indigo-600 dark:text-indigo-400">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-behance"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        <div class="animate-fadein-left">
+            <img src="img/perfil1.png" alt="مهدي"
+                class="w-96 h-96 object-cover rounded-full shadow-lg border-4 border-indigo-200" />
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-20 bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-indigo-600 mb-4">أنا مهدي</h2>
+                <p class="text-gray-700 dark:text-gray-400 leading-relaxed text-lg">
+                    أنا مصمم واجهات ويب شغوف، أركز على إنشاء مواقع حديثة، متجاوبة وسهلة الاستخدام.
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 mt-4">
+                    أستمتع بحل المشكلات وتحويل الأفكار إلى واقع من خلال الكود والإبداع.
+                </p>
+            </div>
+            <div>
+                <img src="img/perfil2.jpg" alt="About" class="w-full h-[400px] object-cover rounded-xl shadow-md" />
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-20 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-indigo-600 mb-12">مهاراتي</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-500">المهارات الاحترافية</h3>
+                    <p class="text-gray-600 dark:text-gray-500 mb-8">هذه بعض التقنيات وأدوات التصميم التي أتقنها.</p>
+                    <div id="skills-container"></div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="img/work3.jpg" alt="Skills Illustration"
+                        class="w-96 h-96 object-cover rounded-xl shadow-lg" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- WORK -->
+<section id="work" class="py-20 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center text-indigo-600 mb-12">أعمالي</h2>
+
+        <!-- Projects Grid -->
+        <div id="projects-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            </div>
+    </div>
+</section>
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold text-indigo-600 mb-4">آراء العملاء</h2>
+        <p class="mb-12 text-lg text-gray-600 dark:text-gray-400">إليك بعض شهادات عملائي عن جودة عملي واحترافيتي.</p>
+
+        <div class="grid gap-8 md:grid-cols-3">
+            <!-- Testimonial Card 1 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
+                <img src="img/man.png" alt="Ahmed"
+                    class="w-20 h-20 rounded-full border-4 border-indigo-600 mb-4">
+                <h4 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400">أحمد بن علي</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">رائد أعمال</p>
+                <div class="flex text-yellow-400 mb-3">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">"عمل رائع وتصميم مذهل، شكراً مهدي على الاحترافية والتعاون!"
+                </p>
+            </div>
+
+            <!-- Testimonial Card 2 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
+                <img src="img/woman.png" alt="Leila"
+                    class="w-20 h-20 rounded-full border-4 border-indigo-600 mb-4">
+                <h4 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400">ليلى محمد</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">مؤسسة موقع إلكتروني</p>
+                <div class="flex text-yellow-400 mb-3">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">"التصميم عصري ومناسب لموقعي. تجربة رائعة!"</p>
+            </div>
+
+            <!-- Testimonial Card 3 -->
+            <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 flex flex-col items-center text-center">
+                <img src="img/man.png" alt="Youssef"
+                    class="w-20 h-20 rounded-full border-4 border-indigo-600 mb-4">
+                <h4 class="text-lg font-semibold text-indigo-600 dark:text-indigo-400">يوسف عبد الرحمن</h4>
+                <p class="text-sm text-gray-500 dark:text-gray-300 mb-2">مدير شركة تقنية</p>
+                <div class="flex text-yellow-400 mb-3">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                        class="fas fa-star-half-alt"></i><i class="far fa-star"></i>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">"التعامل مع مهدي كان سهلاً للغاية والنتيجة كانت مذهلة."</p>
+            </div>
+        </div>
+    </div>
+</section>
+  
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-indigo-600 mb-12">اتصل بي</h2>
+            <form class="bg-white shadow-md rounded-lg p-8 space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="اسمك الكامل"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                    <input type="email" placeholder="بريدك الإلكتروني"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                </div>
+                <textarea rows="6" placeholder="رسالتك"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-indigo-500"></textarea>
+                <button type="submit"
+                    class="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg hover:bg-indigo-700 transition duration-300">إرسال
+                    الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 dark:bg-black text-white py-8">
+        <div class="text-center">
+            <h2 class="text-xl font-bold">مهدي</h2>
+            <div class="flex justify-center space-x-4 text-lg mt-4">
+                <a href="#" class="hover:text-blue-500"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-sky-400"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="text-sm mt-4 text-gray-400">&copy; <span id="year"></span> أحلام مزيان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
